@@ -7,10 +7,10 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
   const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   function caesar(input, shift, encode = true) {// the heart of the function
-    if(!shift||!typeof encode==='boolean'||shift<-25||shift>25){return false}//check input
+    if(!shift||!typeof encode==='boolean'||shift<-25||shift>25) return false//check input
     let list = input.toLowerCase().split('')
     let output = []
-    if(encode===false){shift = 0-shift}//reverses shift direction for decoding
+    if(encode===false) shift = 0-shift//reverses shift direction for decoding
     for(let i=0;i<list.length;i++){
       if(!alphabet.includes(list[i])){output.push(list[i])}//ignores nonalphabetic characters
       else{
@@ -22,15 +22,15 @@ const caesarModule = (function () {
   
   }
   function getShiftedIndex(index,shift,thisValue=(index+shift)){//gets altered location of character
-    if(thisValue<=25&&thisValue>=0){return thisValue}
-    if(thisValue>25){return((thisValue)-26)}
-    if(thisValue<0){return((thisValue)+26)}//added to handle negatives and wrap around leftwards
+    if(thisValue<=25&&thisValue>=0) return thisValue
+    if(thisValue>25)                return((thisValue)-26)
+    if(thisValue<0)                 return((thisValue)+26)   //added to handle negatives and wrap around leftwards
 
 
   }
   function getIndex(letter){
     for(let i=0;i<alphabet.length;i++){
-      if(alphabet[i]===letter){return i}//get location in alphabet of character
+      if(alphabet[i]===letter) return i //get location in alphabet of character
     }
   }
 

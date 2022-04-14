@@ -8,11 +8,11 @@ const substitutionModule = (function () {
   const originalAlphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
   function substitution(input, alphabet, encode = true) {
-    if(!alphabet||alphabet.length!==26){return false}
+    if(!alphabet||alphabet.length!==26) return false
     //checking all alphabet characters are unique
     let temp = []
     for(let i=0;i<alphabet.length;i++){
-      if(temp.includes(alphabet[i])){return false}
+      if(temp.includes(alphabet[i])) return false
       else{temp.push(alphabet[i])}
     }
 
@@ -30,7 +30,7 @@ const substitutionModule = (function () {
     }else{
       let output = []
       for(let i=0;i<list.length;i++){
-      if(!alphabet.includes(list[i])){output.push(list[i])}
+      if(!alphabet.includes(list[i])) output.push(list[i])
       else{
         output.push(decodeLetter(list[i]))
       }
@@ -41,13 +41,13 @@ const substitutionModule = (function () {
 
     function encodeLetter(str){
       for(let i = 0;i<originalAlphabet.length;i++){
-        if(originalAlphabet[i]===str){return alphabet[i]}
+        if(originalAlphabet[i]===str) return alphabet[i]
       }
     }
   
     function decodeLetter(str){
       for(let i = 0;i<alphabet.length;i++){
-        if(alphabet[i]===str){return originalAlphabet[i]}
+        if(alphabet[i]===str) return originalAlphabet[i]
       }  
     }
   }

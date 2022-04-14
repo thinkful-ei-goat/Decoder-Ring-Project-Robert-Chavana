@@ -23,7 +23,7 @@ const polybiusModule = (function () {
   }
     else{
       let symbolCount = input.split(" ").join("").length
-      if(symbolCount%2>0){return false}
+      if(symbolCount%2>0) return false
       let list = input.split('')
       let output = []
       for(let i=0;i<list.length-1;i++){
@@ -42,10 +42,10 @@ const polybiusModule = (function () {
     return grid[str]
   }
   function decodeLetter(num){
-    if(!(Object.values(grid)).includes(num)){throw `OUT OF BOUNDS! ${num} is not referenced in the grid object! Please check to make sure your code was typed in properly!`}
-    if(num===42){return '(i/j)'}
+    if(!(Object.values(grid)).includes(num)) throw `OUT OF BOUNDS! ${num} is not referenced in the grid object! Please check to make sure your code was typed in properly!`
+    if(num===42) return '(i/j)'
     for(let i=0;i<alphabet.length;i++){
-      if(grid[alphabet[i]]===num){return alphabet[i]}
+      if(grid[alphabet[i]]===num) return alphabet[i]
     }
   }
 

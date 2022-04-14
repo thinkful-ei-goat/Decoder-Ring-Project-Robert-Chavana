@@ -266,14 +266,106 @@
           </div>
         </div>
       </section>
+
+
+      <!-- base64 -->
+      <section class="row mt-4">
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-warning">
+              <h2 class="my-2">base64</h2>
+            </div>
+            <div class="card-body">
+              <p>
+                In computer programming, Base64 is a group of binary-to-text encoding schemes that represent binary data (more specifically, a sequence of 8-bit bytes) in sequences of 24 bits that can be represented by four 6-bit Base64 digits.
+
+                Common to all binary-to-text encoding schemes, Base64 is designed to carry data stored in binary formats across channels that only reliably support text content. Base64 is particularly prevalent on the World Wide Web where one of its uses is the ability to embed image files or other binary assets inside textual assets such as HTML and CSS files.
+                -Wikipedia
+              </p>
+              <hr />
+              <form id="base64">
+                <div class="form-group">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="base64-options"
+                      id="base64-options-encode"
+                      value="encode"
+                      checked
+                    />
+                    <label
+                      class="form-check-label"
+                      for="base64-options-encode"
+                      >Encode</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="base64-options"
+                      id="base64-options-decode"
+                      value="decode"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="base64-options-decode"
+                      >Decode</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="base64-options"
+                      id="base64-options-decode"
+                      value="decode_image"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="base64-options-decode"
+                      >Decode Image</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="base64-input">Your message</label>
+                  <textarea
+                    class="form-control"
+                    id="base64-input"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+            </div>
+            <div
+              id="base64-alert"
+              class="alert alert-danger mb-0 rounded-0 d-none"
+              role="alert"
+            >
+              Something went wrong! Check your input and try again.
+            </div>
+            <div class="card-footer">
+              Output:
+              <span class="font-weight-bold" id="base64-output"
+                >No message as of yet...</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="./scripts/setup.js"></script>
     <script src="./src/caesar.js"></script>
     <script src="./src/polybius.js"></script>
     <script src="./src/substitution.js"></script>
+    <script src="./src/base64.js"></script>
     <script src="./scripts/caesar.js"></script>
     <script src="./scripts/polybius.js"></script>
     <script src="./scripts/substitution.js"></script>
+    <script src="./scripts/base64.js"></script>
   </body>
 </html>

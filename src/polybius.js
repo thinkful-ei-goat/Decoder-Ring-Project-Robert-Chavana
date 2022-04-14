@@ -8,6 +8,7 @@ const polybiusModule = (function () {
   // turn grid into array/object, whichever is easier for decode and encode, maybe even both
   const grid = {a:11,b:21,c:31,d:41,e:51,f:12,g:22,h:32,i:42,j:42,k:52,l:13,m:23,n:33,o:43,p:53,q:14,r:24,s:34,t:44,u:54,v:15,w:25,x:35,y:45,z:55}
   const alphabet = Object.keys(grid)
+  const nums = ['0','1','2','3','4','5','6','7','8','9'] // easy cheater way to ignore punctuation on decode
   function polybius(input, encode = true) {
     if(encode===true){
     let list = input.toLowerCase().split("")
@@ -26,7 +27,7 @@ const polybiusModule = (function () {
       let list = input.split('')
       let output = []
       for(let i=0;i<list.length-1;i++){
-        if(list[i]===' '){output.push(list[i])}
+        if(!nums.includes(list[i])){output.push(list[i])}
         else{
           let num = decodeLetter(Number(`${list[i]}${list[i+1]}`))
           output.push(num)

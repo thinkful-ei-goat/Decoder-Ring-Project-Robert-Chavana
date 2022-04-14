@@ -8,7 +8,17 @@ const substitutionModule = (function () {
   const originalAlphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
   function substitution(input, alphabet, encode = true) {
-    if(!alphabet||alphabet.length!==26) return false
+    let alphaGiven = 'Provided'
+    if(!alphabet&&encode===true){
+      alphabet = originalAlphabet
+       .map(letter => ({ letter, sort: Math.random() }))
+       .sort((a, b) => a.sort - b.sort)
+       .map(({ letter }) => letter)
+       console.log(alphabet)
+     alphaGiven = 'Randomly Generated'
+     }
+    else if(!alphabet) return false
+    if(alphabet.length!==26) return false
     //checking all alphabet characters are unique
     let temp = []
     for(let i=0;i<alphabet.length;i++){
@@ -26,7 +36,8 @@ const substitutionModule = (function () {
         output.push(encodeLetter(list[i]))
       }
     }
-    return output.join('')
+    console.log([output.join(''),`${alphaGiven} alphabet: ${alphabet}`])
+    return [output.join(''),`${alphaGiven} alphabet: ${alphabet.join('')}`]
     }else{
       let output = []
       for(let i=0;i<list.length;i++){
@@ -35,7 +46,7 @@ const substitutionModule = (function () {
         output.push(decodeLetter(list[i]))
       }
     }
-    return output.join('')
+    return [output.join(''),`${alphaGiven} alphabet: ${alphabet}`]
     }
 
 

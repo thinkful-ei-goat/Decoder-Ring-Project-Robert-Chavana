@@ -15,7 +15,7 @@ function substitutionRenderer() {
     if (result) {
       alert.classList.add("d-none");
       const output = document.querySelector("#substitution-output");
-      output.innerHTML = result;
+      output.innerHTML = `${result[0]}<hr>${result[1]}`
     } else {
       alert.classList.remove("d-none");
     }

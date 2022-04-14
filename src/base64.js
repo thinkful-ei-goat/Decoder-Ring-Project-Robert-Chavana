@@ -16,6 +16,12 @@ const base64Module = (function () {
         return output
         }
         else{
+        let check = input.split('').includes(',')
+        if(check){
+            check = input.split(',')
+            input = check[1]
+        }
+        input = input.replace(/url\('/g,'').replace(/'\)/g,'')
         return `<img src="data:image;base64,${input}"/>`
         }
       }

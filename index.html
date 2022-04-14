@@ -281,6 +281,9 @@
 
                 Common to all binary-to-text encoding schemes, Base64 is designed to carry data stored in binary formats across channels that only reliably support text content. Base64 is particularly prevalent on the World Wide Web where one of its uses is the ability to embed image files or other binary assets inside textual assets such as HTML and CSS files.
                 -Wikipedia
+
+                <hr>To use the display image function, simply select it and put the base64 encoded image in the box. As of now, you can encode your image using <a href="https://www.base64-image.de/">this site.</a>
+                Make sure you only copy the base64 part! While my code should filter out the "data:image/png;base64," portion, it's always better to be safe than sorry!
               </p>
               <hr />
               <form id="base64">
@@ -325,7 +328,7 @@
                     <label
                       class="form-check-label"
                       for="base64-options-decode"
-                      >Decode Image</label
+                      >Display Image</label
                     >
                   </div>
                 </div>

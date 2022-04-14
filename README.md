@@ -20,9 +20,9 @@ Currently has:
  - -Substitution
 
    --Both encoding and decoding!
-   ---4/14/2022: Added random alphabet generation! Simply leave the --alphabet section blank,
-              ---and it will generate one randomly! Only uses a-z characters though, so if
-              ---you want to use special characters you'll have to input an alphabet using
+   ---4/14/2022: Added random alphabet generation! Simply leave the alphabet section blank,
+              and it will generate one randomly! Only uses a-z characters though, so if
+              you want to use special characters you'll have to input an alphabet using
               them.
               
  
@@ -31,8 +31,8 @@ Currently has:
 
    --Encoding, decoding, and displaying images!
    ---Simply select display image and input the base64 code for an image,
-   ---and it'll display said image! A site for converting images is linked
-   ---on the actual page.
+   and it'll display said image! A site for converting images is linked
+   on the actual page.
     
   Todo, if I ever actually decide to do it:
 
